@@ -18,14 +18,14 @@ const Gallery = () => {
     ];
     
     return (
-        <div className="bg-[#252525] py-20">
+        <div className="bg-[#252525] py-20 px-[50px]">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <h1 className="text-white text-3xl sm:text-4xl font-bold">Gallery</h1>
           <div className="bg-orange-400 w-[100px] h-[2px] mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
                     {Images.map((img) => (
                         <div 
                             key={img.id} 

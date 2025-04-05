@@ -41,14 +41,14 @@ const Menu = () => {
   ];
 
   return (
-    <div className="bg-[#252525] py-20">
+    <div className="bg-[#252525] py-20  px-[50px]">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center text-center mb-16">
           <h1 className="text-white text-3xl sm:text-4xl font-bold">Our Menu</h1>
           <div className="bg-orange-400 w-[100px] h-[2px] mt-4"></div>
         </div>
         
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {Data.map((item) => (
             <div 
               key={item.id} 
@@ -57,7 +57,7 @@ const Menu = () => {
               <img 
                 src={item.img} 
                 alt={item.title}
-                className="w-full h-40 sm:h-48 object-cover rounded-md mb-3 sm:mb-4"
+                className="w-full h-40 sm:h-48 object-contain rounded-md mb-3 sm:mb-4"
               />
               <h2 className="text-lg sm:text-xl text-white font-semibold mb-2">{item.title}</h2>
               <p className="text-xs sm:text-sm text-gray-400 flex-gold">{item.desc}</p>
