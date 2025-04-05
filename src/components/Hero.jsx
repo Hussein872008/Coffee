@@ -2,8 +2,8 @@ import { imgHero } from "../assets";
 
 const Hero = () => {
   return (
-    <div className=" bg-[#3F181C]">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div className="bg-[#3F181C] py-20">
+  <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4">
             <div className="text-white flex flex-col gap-6 max-w-lg">
                 <h1 className="text-4xl font-bold font-mono  text-orange-300">
                     Best Coffe
