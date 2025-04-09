@@ -25,7 +25,7 @@ const Gallery = () => {
           <div className="bg-orange-400 w-[100px] h-[2px] mt-4"></div>
         </div>
 
-        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-6">
                     {Images.map((img) => (
                         <div 
                             key={img.id} 

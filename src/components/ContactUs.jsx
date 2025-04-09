@@ -41,7 +41,7 @@ const ContactUs = () => {
           placeholder="Write your message here..."
           className="w-full p-2 bg-[#4F2A2D] text-white rounded-lg mb-3 h-32 focus:outline-none focus:ring-2 focus:ring-orange-500"
         ></textarea>
-        <button type="submit" className="w-44 bg-[#ff7206] text-white font-semibold p-3 rounded-full hover:bg-orange-600 transition duration-300">
+        <button type="submit" className="w-44 bg-[#ff7206] text-white font-semibold p-3 rounded-lg hover:bg-orange-600 transition duration-300">
           Submit Ticket
         </button>
       </div>
@@ -68,7 +68,7 @@ const ContactUs = () => {
           placeholder="Enter Your Email"
           className="w-full p-2 bg-[#4F2A2D] text-white rounded-lg mb-3 focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
-        <button type="submit" className="w-full bg-[#ff7206] text-white font-semibold py-2 rounded-lg hover:bg-orange-600 transition duration-300">
+        <button type="submit" className="w-full bg-[#ff7206] text-white font-semibold py-3 rounded-lg hover:bg-orange-600 transition duration-300">
           Subscribe
         </button>
       </div>

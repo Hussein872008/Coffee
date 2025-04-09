@@ -18,30 +18,31 @@ const Testimonials = () => {
       img: user1,
     },
     {
-      id: 1,
-      name: "- John Doe",
-      desc: "Amazing service and top-notch coffee!",
+      id: 2,  
+      name: "- Jane Smith",
+      desc: "Best coffee experience I've ever had!",
       img: user2,
     },
     {
-      id: 1,
-      name: "- John Doe",
-      desc: "Amazing service and top-notch coffee!",
+      id: 3,  
+      name: "- Mike Ross",
+      desc: "A must-visit place for all coffee lovers!",
       img: user3,
     },
     {
-      id: 1,
-      name: "- John Doe",
-      desc: "Amazing service and top-notch coffee!",
+      id: 4, 
+      name: "- Sarah Williams",
+      desc: "A cozy place with amazing drinks.",
       img: user4,
     },
     {
-      id: 1,
-      name: "- John Doe",
-      desc: "Amazing service and top-notch coffee!",
+      id: 5, 
+      name: "- David Beckham",
+      desc: "Great ambiance and excellent service.",
       img: user5,
     },
   ];
+  
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -69,7 +70,7 @@ const Testimonials = () => {
         
         {People.map((person) => (
           <SwiperSlide key={person.id}>
-            <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4"  >
               <img
                 src={person.img}
                 className="w-20 h-20 rounded-full"
@@ -80,13 +81,14 @@ const Testimonials = () => {
             </div>
           </SwiperSlide>
         ))}
-
-        <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48 48" ref={progressCircle}>
-            <circle cx="24" cy="24" r="20"></circle>
-          </svg>
-          <span ref={progressContent}></span>
-        </div>
+      <div className="pt-[90px]" id="contact">
+      <div className="autoplay-progress sm:block" slot="container-end" >
+        <svg viewBox="0 0 48 48" ref={progressCircle}>
+          <circle cx="24"  cy="24" r="20"></circle>
+        </svg>
+        <span ref={progressContent}></span>
+      </div>
+      </div>
       </Swiper>
     </div>
   );

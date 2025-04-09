@@ -4,54 +4,70 @@ import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { IoMdClose } from "react-icons/io";
 
-const Links = [
-  { id: 1, page: "Home", path: "/" },
-  { id: 2, page: "About", path: "/about" },
-  { id: 3, page: "Contact", path: "/contact" },
-  { id: 4, page: "Support", path: "/support" },
-  { id: 5, page: "Pricing", path: "/pricing" }
-];
-
 const NavBar = () => {
   const [openBar, setOpenBar] = useState(false);
+  const scrollToAbout = () => {
+    const contactSection = document.getElementById('about');
+    contactSection.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    contactSection.scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
 
   return (
     <div className="bg-[#3F181C] h-[80px] sticky top-0 z-50 shadow-md px-[50px]">
-      <div className="max-w-7xl mx-auto flex  justify-between items-center h-full px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-4 sm:px-6 lg:px-8">
         <div className="text-white flex items-center gap-2 ">
-          <img src={logo} className="w-10" alt="logo" />
+          <Link to="/"><img src={logo} className="w-10" alt="logo" /></Link>
           <h1 className="text-3xl font-bold">Coffe</h1>
         </div>
 
-        {/* Desktop Links */}
-        <ul className="hidden mdl:flex items-center gap-8 text-white">
-          {Links.map((item) => (
-            <li
-              key={item.id}
-              className="px-2 hover:bg-[#7b3f45ad] transition duration-500 rounded"
-            >
-              <Link to={item.path}>{item.page}</Link>
-            </li>
-          ))}
+        <ul className="hidden md:flex items-center gap-8 text-white">
+          <li className="px-2 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="px-2 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+          <button
+            onClick={scrollToAbout}
+            className="transition"
+          >
+            About
+          </button>          </li>
+          <li className="px-2 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+          <button
+            onClick={scrollToContact}
+            className="transition"
+          >
+            Contact
+          </button>           </li>
+          <li className="px-2 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+            <Link to="/support">Support</Link>
+          </li>
+          <li className="px-2 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+            <Link to="/pricing">Pricing</Link>
+          </li>
         </ul>
 
-        {/* Desktop Button */}
-        <div className="hidden mdl:flex">
+        <div className="hidden md:flex">
           <button className="bg-transparent px-4 py-2 rounded font-medium border text-white border-white hover:border-orange-400 hover:text-orange-400 transition duration-300">
             Get Started
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div
-          className="mdl:hidden cursor-pointer text-white"
+          className="md:hidden cursor-pointer text-white"
           onClick={() => setOpenBar(!openBar)}
         >
           {!openBar ? <FaBars fontSize="20px" /> : <IoMdClose fontSize="20px" />}
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`fixed top-0 right-0 bg-[#3F181C]/95 backdrop-blur-md w-[200px] h-full transform ${
           openBar ? "translate-x-0" : "translate-x-full"
@@ -65,14 +81,29 @@ const NavBar = () => {
         </div>
 
         <ul className="flex flex-col gap-6 text-white px-4 mt-16">
-          {Links.map((link) => (
-            <li
-              key={link.id}
-              className="px-2 py-1 hover:bg-[#7b3f45ad] transition duration-500 rounded"
-            >
-              <Link to={link.path}>{link.page}</Link>
-            </li>
-          ))}
+          <li className="px-2 py-1 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="px-2 py-1 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+          <button
+            onClick={scrollToAbout}
+            className="transition"
+          >
+            About
+          </button>           </li>
+          <li className="px-2 py-1 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+          <button
+            onClick={scrollToContact}
+            className="transition"
+          >
+            Contact
+          </button>           </li>
+          <li className="px-2 py-1 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+            <Link to="/support">Support</Link>
+          </li>
+          <li className="px-2 py-1 hover:bg-[#7b3f45ad] transition duration-500 rounded">
+            <Link to="/pricing">Pricing</Link>
+          </li>
         </ul>
 
         {/* Mobile Button */}
